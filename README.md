@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Search Books on Goodreads Platform using API**
 
-## Available Scripts
+This application uses goodreads `search` and `show` api to look for books by title, author or isbn code as listed here on [GoodReads API page](https://www.goodreads.com/api/index#search.books).
 
-In the project directory, you can run:
+This project was bootstrapped with `create-react-app`(version 16.12) and deployed live at http://goodreadsapidemo.herokuapp.com/
 
-### `yarn start`
+# How to setup and run the application 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Assumption:** This project assumes that the user already have Node + NPM/YARN installed.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Required Environment Variables:**
 
-### `yarn test`
+`API_KEY` : API Key is needed to make all requests. Hence you need to login and generate the API key from [here](https://www.goodreads.com/api/keys).Moreover, as of now, Goodreads only allows 200 requests/60 minutes.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You may use the API key directly in the code(not recommended).Moreover you can also setup environment specific `.env` file as described [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables) and then use the API.Dont forget to add the .`env` in `.gitignore` file too. 
 
-### `yarn build`
+Once the API_KEY is set, Lets get the code by firstly cloning the repo, installing the node packages and starting the server.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Clone the repo:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    git clone https://github.com/mike1011/react-goodreadsapi-demo.git
 
-### `yarn eject`
+**Install dependencies:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    npm install
+    
+    `This will install reactjs, bootstrap and axios as major libraries used in this project`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Starting the application in development mode:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    npm start OR yarn start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Features In Current Version:
 
-## Learn More
+1. Search for books by title, author, or ISBN.
+2. API only return 20 search results.
+3. List View - Displays only title, author, and link to goodreads page.
+4. Details VIew - See the description and rating, and other details by clicking on individual item in the result.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# TODO:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add pagination to search more by page numbers (1,2,3 etc)
 
-### Code Splitting
+# Important Note:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Unfortunately, to use GoodReads API, You have to use an external proxy that supports CORS to make the goodreads request
+else you will keep getting CORS error.More details [here](https://www.goodreads.com/topic/show/17893514-cors-access-control-allow-origin)
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
