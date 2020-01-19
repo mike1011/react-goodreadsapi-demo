@@ -1,4 +1,4 @@
-# **Search Books on Goodreads Platform using API**
+# **Search Books using Goodreads API**
 
 This application uses goodreads `search` and `show` api to look for books by title, author or isbn code as listed here on [GoodReads API page](https://www.goodreads.com/api/index#search.books).
 
@@ -44,7 +44,8 @@ Once the API_KEY is set, Lets get the code by firstly cloning the repo, installi
 
 # Important Note:
 
-Unfortunately, to use GoodReads API, You have to use an external proxy that supports CORS to make the goodreads request
+- Goodreads api returns XML response and not json.
+- Unfortunately, to use GoodReads API, You have to use an external proxy that supports CORS to make the goodreads request
 else you will keep getting CORS error.More details [here](https://www.goodreads.com/topic/show/17893514-cors-access-control-allow-origin)
 
 
